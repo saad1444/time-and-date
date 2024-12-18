@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>current date</title>
+</head>
+<body>
+    <script>
+        // Function to display the current date and time once
+        function displayDateTime() {
+            let currentDate = new Date();
+            let weekArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let day = weekArr[currentDate.getDay()];
+            let date = currentDate.getDate();
+            let month = currentDate.getMonth() + 1; // months are zero-indexed
+            let year = currentDate.getFullYear();
+            let hours = currentDate.getHours();
+            let minutes = currentDate.getMinutes();
+            let seconds = currentDate.getSeconds();
+
+            // Formatting to ensure 2 digits for minutes and seconds
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Display the formatted date and time
+            let formattedDateTime = `${day}, ${date}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+            console.log(formattedDateTime);
+        }
+
+        // Call displayDateTime once to show the current date and time
+        displayDateTime();
+
+    </script>
+</body>
+</html>
